@@ -68,8 +68,8 @@ export default function Portfolio() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Work</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Our Work</h2>
+          <p className="text-xl text-jaw-silver max-w-3xl mx-auto">
             See how we've helped small businesses transform their marketing with
             powerful video content
           </p>
@@ -97,9 +97,9 @@ export default function Portfolio() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{video.title}</h3>
-                <p className="text-gray-300 mb-4">{video.description}</p>
-                <div className="flex items-center text-jaw-gold">
+                <h3 className="text-xl font-bold mb-2 text-white">{video.title}</h3>
+                <p className="text-jaw-silver mb-4">{video.description}</p>
+                <div className="flex items-center text-jaw-silver">
                   <video.icon className="mr-2" size={16} />
                   <span className="text-sm">{video.category}</span>
                 </div>
@@ -114,7 +114,7 @@ export default function Portfolio() {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="text-center mt-12"
         >
-          <button className="bg-jaw-gold hover:bg-yellow-500 text-jaw-gray font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105">
+          <button className="bg-jaw-silver hover:bg-jaw-gold text-jaw-gray font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105">
             View Full Portfolio
           </button>
         </motion.div>

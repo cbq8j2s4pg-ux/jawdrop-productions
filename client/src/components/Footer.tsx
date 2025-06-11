@@ -36,10 +36,10 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
             className="md:col-span-2"
           >
-            <h3 className="text-2xl font-bold text-jaw-gold mb-4">
+            <h3 className="text-2xl font-bold text-jaw-silver mb-4">
               JAW Drop Productions
             </h3>
-            <p className="text-gray-300 mb-6 max-w-md">
+            <p className="text-jaw-silver mb-6 max-w-md">
               Creating jaw-dropping video content that transforms small
               businesses into industry leaders through compelling visual
               storytelling.
@@ -51,7 +51,7 @@ export default function Footer() {
                   href={social.href}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-jaw-blue hover:bg-jaw-gold text-white p-3 rounded-lg transition-colors duration-200"
+                  className="bg-jaw-dark-silver hover:bg-jaw-silver hover:text-jaw-gray text-white p-3 rounded-lg transition-colors duration-200"
                   aria-label={social.label}
                 >
                   <social.icon size={20} />
@@ -66,12 +66,12 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <h4 className="text-lg font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-gray-300">
+            <ul className="space-y-2 text-jaw-silver">
               {serviceLinks.map((service) => (
                 <li key={service}>
                   <button
                     onClick={() => scrollToSection("services")}
-                    className="hover:text-jaw-gold transition-colors duration-200"
+                    className="hover:text-white transition-colors duration-200"
                   >
                     {service}
                   </button>
@@ -86,14 +86,14 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
-            <ul className="space-y-2 text-gray-300">
+            <ul className="space-y-2 text-jaw-silver">
               <li>(555) 123-4567</li>
               <li>hello@jawdropproductions.com</li>
               <li>Los Angeles, CA</li>
               <li>
                 <button
                   onClick={() => scrollToSection("contact")}
-                  className="hover:text-jaw-gold transition-colors duration-200"
+                  className="hover:text-white transition-colors duration-200"
                 >
                   Get Free Quote
                 </button>
@@ -106,7 +106,7 @@ export default function Footer() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-400"
+          className="border-t border-jaw-dark-silver mt-8 pt-8 text-center text-jaw-silver"
         >
           <p>
             &copy; 2024 JAW Drop Productions. All rights reserved. |

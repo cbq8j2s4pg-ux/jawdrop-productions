@@ -81,41 +81,41 @@ export default function Contact() {
           >
             <h2 className="text-4xl md:text-5xl font-bold text-jaw-gray mb-6">
               Ready to Create Something{" "}
-              <span className="text-jaw-blue">Amazing?</span>
+              <span className="text-jaw-dark-silver">Amazing?</span>
             </h2>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-xl text-jaw-dark-silver mb-8 leading-relaxed">
               Let's discuss your video marketing goals and create content that
               drives real results for your business.
             </p>
 
             <div className="space-y-6">
               <div className="flex items-center">
-                <div className="bg-jaw-blue text-white p-3 rounded-lg mr-4">
+                <div className="bg-jaw-gray text-white p-3 rounded-lg mr-4">
                   <Phone size={20} />
                 </div>
                 <div>
                   <div className="font-semibold text-jaw-gray">Phone</div>
-                  <div className="text-gray-600">(555) 123-4567</div>
+                  <div className="text-jaw-dark-silver">(555) 123-4567</div>
                 </div>
               </div>
 
               <div className="flex items-center">
-                <div className="bg-jaw-blue text-white p-3 rounded-lg mr-4">
+                <div className="bg-jaw-gray text-white p-3 rounded-lg mr-4">
                   <Mail size={20} />
                 </div>
                 <div>
                   <div className="font-semibold text-jaw-gray">Email</div>
-                  <div className="text-gray-600">hello@jawdropproductions.com</div>
+                  <div className="text-jaw-dark-silver">hello@jawdropproductions.com</div>
                 </div>
               </div>
 
               <div className="flex items-center">
-                <div className="bg-jaw-blue text-white p-3 rounded-lg mr-4">
+                <div className="bg-jaw-gray text-white p-3 rounded-lg mr-4">
                   <MapPin size={20} />
                 </div>
                 <div>
                   <div className="font-semibold text-jaw-gray">Location</div>
-                  <div className="text-gray-600">Los Angeles, CA</div>
+                  <div className="text-jaw-dark-silver">Los Angeles, CA</div>
                 </div>
               </div>
             </div>
@@ -221,7 +221,7 @@ export default function Contact() {
               <Button
                 type="submit"
                 disabled={contactMutation.isPending}
-                className="w-full bg-jaw-blue hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="w-full bg-jaw-gray hover:bg-jaw-silver hover:text-jaw-gray text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 {contactMutation.isPending
                   ? "Sending..."
