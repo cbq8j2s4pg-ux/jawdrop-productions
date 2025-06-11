@@ -35,14 +35,14 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-sm border-b border-gray-100"
-          : "bg-white/95 backdrop-blur-sm"
+          ? "bg-jaw-light/95 backdrop-blur-sm border-b border-jaw-silver"
+          : "bg-jaw-light/95 backdrop-blur-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-jaw-blue">
+            <h1 className="text-2xl font-bold text-jaw-gray">
               JAW Drop Productions
             </h1>
           </div>
@@ -53,7 +53,7 @@ export default function Navigation() {
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="text-gray-700 hover:text-jaw-blue transition-colors duration-200"
+                className="text-jaw-dark-silver hover:text-jaw-gray transition-colors duration-200"
               >
                 {link.label}
               </button>
@@ -62,7 +62,7 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-700"
+            className="md:hidden text-jaw-dark-silver"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -83,7 +83,7 @@ export default function Navigation() {
                   <button
                     key={link.href}
                     onClick={() => scrollToSection(link.href)}
-                    className="block w-full text-left px-4 py-2 text-gray-700 hover:text-jaw-blue hover:bg-gray-50 transition-colors duration-200"
+                    className="block w-full text-left px-4 py-2 text-jaw-dark-silver hover:text-jaw-gray hover:bg-jaw-light transition-colors duration-200"
                   >
                     {link.label}
                   </button>

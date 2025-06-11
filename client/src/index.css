@@ -24,11 +24,13 @@
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
   
-  /* JAW Drop Productions Brand Colors */
-  --jaw-blue: hsl(213, 82%, 35%);
-  --jaw-gray: hsl(217, 19%, 16%);
-  --jaw-gold: hsl(44, 92%, 49%);
-  --jaw-light: hsl(210, 40%, 98%);
+  /* JAW Drop Productions Brand Colors - Metallic & Grayscale */
+  --jaw-blue: hsl(210, 15%, 25%);
+  --jaw-gray: hsl(0, 0%, 15%);
+  --jaw-gold: hsl(45, 15%, 70%);
+  --jaw-light: hsl(0, 0%, 97%);
+  --jaw-silver: hsl(0, 0%, 85%);
+  --jaw-dark-silver: hsl(0, 0%, 45%);
 }
 
 .dark {
@@ -81,6 +83,14 @@
   color: var(--jaw-gold);
 }
 
+.text-jaw-silver {
+  color: var(--jaw-silver);
+}
+
+.text-jaw-dark-silver {
+  color: var(--jaw-dark-silver);
+}
+
 .bg-jaw-blue {
   background-color: var(--jaw-blue);
 }
@@ -97,8 +107,20 @@
   background-color: var(--jaw-light);
 }
 
+.bg-jaw-silver {
+  background-color: var(--jaw-silver);
+}
+
+.bg-jaw-dark-silver {
+  background-color: var(--jaw-dark-silver);
+}
+
 .border-jaw-blue {
   border-color: var(--jaw-blue);
+}
+
+.border-jaw-silver {
+  border-color: var(--jaw-silver);
 }
 
 .hover\:bg-jaw-blue:hover {
@@ -109,10 +131,18 @@
   background-color: var(--jaw-gold);
 }
 
+.hover\:bg-jaw-silver:hover {
+  background-color: var(--jaw-silver);
+}
+
 .hover\:text-jaw-blue:hover {
   color: var(--jaw-blue);
 }
 
 .hover\:text-jaw-gold:hover {
   color: var(--jaw-gold);
+}
+
+.hover\:text-jaw-silver:hover {
+  color: var(--jaw-silver);
 }

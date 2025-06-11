@@ -16,7 +16,7 @@ export default function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background with uploaded image */}
-      <div className="absolute inset-0 bg-gradient-to-r from-jaw-blue/90 to-jaw-gray/80 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-jaw-gray/85 to-jaw-blue/80 z-10"></div>
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
@@ -24,7 +24,7 @@ export default function Hero() {
         }}
       ></div>
 
-      <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4">
+      <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4 pt-20">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -32,14 +32,14 @@ export default function Hero() {
           className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
         >
           Create Videos That Make Jaws{" "}
-          <span className="text-jaw-gold">Drop</span>
+          <span className="text-jaw-silver">Drop</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-xl md:text-2xl mb-8 opacity-90 max-w-2xl mx-auto"
+          className="text-xl md:text-2xl mb-32 opacity-90 max-w-2xl mx-auto"
         >
           Professional video marketing that transforms small businesses into
           industry leaders through compelling visual storytelling.
@@ -53,13 +53,13 @@ export default function Hero() {
         >
           <button
             onClick={() => scrollToSection("contact")}
-            className="bg-jaw-gold hover:bg-yellow-500 text-jaw-gray font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105"
+            className="bg-jaw-silver hover:bg-jaw-gold text-jaw-gray font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105"
           >
             Start Your Project
           </button>
           <button
             onClick={() => scrollToSection("portfolio")}
-            className="border-2 border-white text-white hover:bg-white hover:text-jaw-blue font-semibold px-8 py-4 rounded-lg transition-all duration-300"
+            className="border-2 border-jaw-silver text-jaw-silver hover:bg-jaw-silver hover:text-jaw-gray font-semibold px-8 py-4 rounded-lg transition-all duration-300"
           >
             View Our Work
           </button>

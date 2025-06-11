@@ -73,7 +73,7 @@ export default function Services() {
           <h2 className="text-4xl md:text-5xl font-bold text-jaw-gray mb-4">
             Our Services
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-jaw-dark-silver max-w-3xl mx-auto">
             Comprehensive video marketing solutions tailored to elevate your
             small business
           </p>
@@ -90,17 +90,17 @@ export default function Services() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-jaw-light rounded-2xl p-8 hover:shadow-lg transition-all duration-300 group"
             >
-              <div className="bg-jaw-blue text-white p-4 rounded-xl inline-flex mb-6 group-hover:bg-jaw-gold transition-colors duration-300">
+              <div className="bg-jaw-gray text-white p-4 rounded-xl inline-flex mb-6 group-hover:bg-jaw-silver group-hover:text-jaw-gray transition-colors duration-300">
                 <service.icon size={24} />
               </div>
               <h3 className="text-2xl font-bold text-jaw-gray mb-4">
                 {service.title}
               </h3>
-              <p className="text-gray-600 mb-6">{service.description}</p>
-              <ul className="text-gray-600 space-y-2">
+              <p className="text-jaw-dark-silver mb-6">{service.description}</p>
+              <ul className="text-jaw-dark-silver space-y-2">
                 {service.features.map((feature) => (
                   <li key={feature} className="flex items-center">
-                    <Check className="text-jaw-gold mr-2" size={16} />
+                    <Check className="text-jaw-silver mr-2" size={16} />
                     {feature}
                   </li>
                 ))}

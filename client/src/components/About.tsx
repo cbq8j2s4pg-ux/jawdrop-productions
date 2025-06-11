@@ -19,16 +19,16 @@ export default function About() {
           >
             <h2 className="text-4xl md:text-5xl font-bold text-jaw-gray mb-6">
               We Make Your Business{" "}
-              <span className="text-jaw-blue">Unforgettable</span>
+              <span className="text-jaw-dark-silver">Unforgettable</span>
             </h2>
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+            <p className="text-lg text-jaw-dark-silver mb-6 leading-relaxed">
               At JAW Drop Productions, we specialize in creating high-impact
               video content that drives results for small businesses. Our team
               combines creative storytelling with strategic marketing to produce
               videos that not only look amazing but convert viewers into
               customers.
             </p>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            <p className="text-lg text-jaw-dark-silver mb-8 leading-relaxed">
               From promotional videos and product demos to testimonials and
               social media content, we handle every aspect of video production
               to help your business stand out in today's competitive market.
@@ -39,22 +39,22 @@ export default function About() {
                   initial={{ scale: 0 }}
                   animate={isInView ? { scale: 1 } : { scale: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  className="text-3xl font-bold text-jaw-blue mb-2"
+                  className="text-3xl font-bold text-jaw-gray mb-2"
                 >
                   150+
                 </motion.div>
-                <div className="text-gray-600">Projects Completed</div>
+                <div className="text-jaw-dark-silver">Projects Completed</div>
               </div>
               <div className="text-center">
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={isInView ? { scale: 1 } : { scale: 0 }}
                   transition={{ duration: 0.5, delay: 0.5 }}
-                  className="text-3xl font-bold text-jaw-blue mb-2"
+                  className="text-3xl font-bold text-jaw-gray mb-2"
                 >
                   95%
                 </motion.div>
-                <div className="text-gray-600">Client Satisfaction</div>
+                <div className="text-jaw-dark-silver">Client Satisfaction</div>
               </div>
             </div>
           </motion.div>
@@ -78,7 +78,7 @@ export default function About() {
                   : { opacity: 0, scale: 0.8 }
               }
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="absolute -bottom-6 -right-6 bg-jaw-gold text-jaw-gray p-6 rounded-xl shadow-lg"
+              className="absolute -bottom-6 -right-6 bg-jaw-silver text-jaw-gray p-6 rounded-xl shadow-lg"
             >
               <Video className="text-3xl mb-2" />
               <div className="font-bold">Expert Production</div>
