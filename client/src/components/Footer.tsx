@@ -1,0 +1,119 @@
+import { motion } from "framer-motion";
+import { Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
+import { FaTiktok } from "react-icons/fa";
+
+export default function Footer() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const socialLinks = [
+    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Youtube, href: "#", label: "YouTube" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: FaTiktok, href: "#", label: "TikTok" },
+  ];
+
+  const serviceLinks = [
+    "Promotional Videos",
+    "Testimonial Videos",
+    "Social Media Content",
+    "Product Demos",
+    "Event Coverage",
+  ];
+
+  return (
+    <footer className="bg-jaw-gray text-white py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="md:col-span-2"
+          >
+            <h3 className="text-2xl font-bold text-jaw-gold mb-4">
+              JAW Drop Productions
+            </h3>
+            <p className="text-gray-300 mb-6 max-w-md">
+              Creating jaw-dropping video content that transforms small
+              businesses into industry leaders through compelling visual
+              storytelling.
+            </p>
+            <div className="flex space-x-4">
+              {socialLinks.map((social) => (
+                <motion.a
+                  key={social.label}
+                  href={social.href}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-jaw-blue hover:bg-jaw-gold text-white p-3 rounded-lg transition-colors duration-200"
+                  aria-label={social.label}
+                >
+                  <social.icon size={20} />
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <h4 className="text-lg font-semibold mb-4">Services</h4>
+            <ul className="space-y-2 text-gray-300">
+              {serviceLinks.map((service) => (
+                <li key={service}>
+                  <button
+                    onClick={() => scrollToSection("services")}
+                    className="hover:text-jaw-gold transition-colors duration-200"
+                  >
+                    {service}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <h4 className="text-lg font-semibold mb-4">Contact</h4>
+            <ul className="space-y-2 text-gray-300">
+              <li>(555) 123-4567</li>
+              <li>hello@jawdropproductions.com</li>
+              <li>Los Angeles, CA</li>
+              <li>
+                <button
+                  onClick={() => scrollToSection("contact")}
+                  className="hover:text-jaw-gold transition-colors duration-200"
+                >
+                  Get Free Quote
+                </button>
+              </li>
+            </ul>
+          </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>
+            &copy; 2024 JAW Drop Productions. All rights reserved. |
+            Transforming small businesses through video marketing.
+          </p>
+        </motion.div>
+      </div>
+    </footer>
+  );
+}
