@@ -35,25 +35,19 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-jaw-light/95 backdrop-blur-sm border-b border-jaw-silver"
-          : "bg-jaw-light/95 backdrop-blur-sm"
+          ? "bg-jaw-gray/95 backdrop-blur-sm border-b border-jaw-silver"
+          : "bg-jaw-gray/95 backdrop-blur-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-jaw-gray">
-              JAW Drop Productions
-            </h1>
-          </div>
-
-          {/* Desktop Navigation */}
+        <div className="flex justify-center items-center py-4">
+          {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="text-jaw-dark-silver hover:text-jaw-gray transition-colors duration-200"
+                className="text-white font-bold hover:text-jaw-silver transition-colors duration-200 text-lg"
               >
                 {link.label}
               </button>
@@ -62,7 +56,7 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-jaw-dark-silver"
+            className="md:hidden text-white absolute right-4"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -76,14 +70,14 @@ export default function Navigation() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden border-t border-gray-100"
+              className="md:hidden border-t border-jaw-silver"
             >
               <div className="py-4 space-y-2">
                 {navLinks.map((link) => (
                   <button
                     key={link.href}
                     onClick={() => scrollToSection(link.href)}
-                    className="block w-full text-left px-4 py-2 text-jaw-dark-silver hover:text-jaw-gray hover:bg-jaw-light transition-colors duration-200"
+                    className="block w-full text-left px-4 py-2 text-white font-bold hover:text-jaw-silver hover:bg-jaw-blue transition-colors duration-200"
                   >
                     {link.label}
                   </button>

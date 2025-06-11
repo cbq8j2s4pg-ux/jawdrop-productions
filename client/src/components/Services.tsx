@@ -61,7 +61,7 @@ export default function Services() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-20 bg-jaw-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -88,7 +88,7 @@ export default function Services() {
                 isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
               }
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-jaw-light rounded-2xl p-8 hover:shadow-lg transition-all duration-300 group"
+              className="bg-white rounded-2xl p-8 hover:shadow-lg transition-all duration-300 group border border-jaw-silver"
             >
               <div className="bg-jaw-gray text-white p-4 rounded-xl inline-flex mb-6 group-hover:bg-jaw-silver group-hover:text-jaw-gray transition-colors duration-300">
                 <service.icon size={24} />

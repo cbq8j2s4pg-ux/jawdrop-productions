@@ -25,11 +25,20 @@ export default function Hero() {
       ></div>
 
       <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4 pt-20">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-6xl font-bold mb-8 text-white"
+        >
+          JAW Drop Productions
+        </motion.h2>
+        
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
         >
           Create Videos That Make Jaws{" "}
           <span className="text-jaw-silver">Drop</span>
@@ -38,7 +47,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
           className="text-xl md:text-2xl mb-32 opacity-90 max-w-2xl mx-auto"
         >
           Professional video marketing that transforms small businesses into
@@ -48,7 +57,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <button
