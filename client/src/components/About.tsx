@@ -19,19 +19,17 @@ export default function About() {
           >
             <h2 className="text-4xl md:text-5xl font-bold text-jaw-gray mb-6">
               We Make Your Business{" "}
-              <span className="text-jaw-dark-silver">Unforgettable</span>
+              <span className="text-jaw-dark-silver">Absolutely Legendary</span>
             </h2>
             <p className="text-lg text-jaw-dark-silver mb-6 leading-relaxed">
-              At JAW Drop Productions, we specialize in creating high-impact
-              video content that drives results for small businesses. Our team
-              combines creative storytelling with strategic marketing to produce
-              videos that not only look amazing but convert viewers into
-              customers.
+              Yo, we're JAW Drop Productions and we make videos that straight up 
+              slap. Our crew knows how to make content that doesn't just look 
+              fire - it actually converts and gets you paid.
             </p>
             <p className="text-lg text-jaw-dark-silver mb-8 leading-relaxed">
-              From promotional videos and product demos to testimonials and
-              social media content, we handle every aspect of video production
-              to help your business stand out in today's competitive market.
+              Whether you need promo vids, product demos, testimonials, or 
+              social media content that goes viral - we got you covered. 
+              We handle everything so your business can dominate the competition.
             </p>
             <div className="grid grid-cols-2 gap-6">
               <div className="text-center">
@@ -43,7 +41,7 @@ export default function About() {
                 >
                   150+
                 </motion.div>
-                <div className="text-jaw-dark-silver">Projects Completed</div>
+                <div className="text-jaw-dark-silver">Bangers Delivered</div>
               </div>
               <div className="text-center">
                 <motion.div
@@ -52,9 +50,9 @@ export default function About() {
                   transition={{ duration: 0.5, delay: 0.5 }}
                   className="text-3xl font-bold text-jaw-gray mb-2"
                 >
-                  95%
+                  100%
                 </motion.div>
-                <div className="text-jaw-dark-silver">Client Satisfaction</div>
+                <div className="text-jaw-dark-silver">Pure Heat</div>
               </div>
             </div>
           </motion.div>

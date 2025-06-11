@@ -14,45 +14,45 @@ import {
 const services = [
   {
     icon: Video,
-    title: "Promotional Videos",
+    title: "Promo Videos That Slap",
     description:
-      "Showcase your business with compelling promotional content that drives engagement and conversions.",
-    features: ["Brand storytelling", "Product showcases", "Service demonstrations"],
+      "We make promos that straight up convert. Your business will look so fire, customers won't be able to resist.",
+    features: ["Brand stories that hit", "Product showcases", "Service demos that crush"],
   },
   {
     icon: Users,
-    title: "Testimonial Videos",
+    title: "Testimonials That Hit Different",
     description:
-      "Build trust and credibility with authentic customer testimonials that convert prospects into clients.",
-    features: ["Customer interviews", "Case studies", "Success stories"],
+      "Real customers spitting facts about your business. These testimonials will have prospects ready to buy immediately.",
+    features: ["Customer success stories", "Case studies that wow", "Social proof that converts"],
   },
   {
     icon: Share2,
-    title: "Social Media Content",
+    title: "Social Content That Goes Viral",
     description:
-      "Optimize your social presence with platform-specific video content that maximizes reach and engagement.",
-    features: ["Instagram & TikTok videos", "Facebook ads", "YouTube content"],
+      "Platform-optimized content that gets shared, liked, and saves. Your socials will be absolutely popping.",
+    features: ["TikTok & Insta bangers", "Facebook ads that convert", "YouTube content that slaps"],
   },
   {
     icon: PlayCircle,
-    title: "Product Demos",
+    title: "Product Demos That Sell",
     description:
-      "Show your products in action with detailed demonstrations that highlight features and benefits.",
-    features: ["Feature highlights", "How-to guides", "Comparison videos"],
+      "Show your products doing what they do best. These demos will have people adding to cart before the video ends.",
+    features: ["Feature breakdowns", "How-to content", "Comparison vids that win"],
   },
   {
     icon: Megaphone,
-    title: "Event Coverage",
+    title: "Event Coverage That's Fire",
     description:
-      "Capture and showcase your business events, launches, and special occasions professionally.",
-    features: ["Live event filming", "Post-event highlights", "Behind-the-scenes"],
+      "We capture your events and make them look absolutely legendary. Every moment becomes marketing gold.",
+    features: ["Live event filming", "Highlight reels that pop", "Behind-the-scenes content"],
   },
   {
     icon: TrendingUp,
-    title: "Training Videos",
+    title: "Training Vids That Actually Work",
     description:
-      "Educate your customers and employees with clear, engaging instructional video content.",
-    features: ["Employee onboarding", "Customer tutorials", "Process documentation"],
+      "Educational content that doesn't put people to sleep. Clear, engaging, and actually useful training.",
+    features: ["Onboarding that sticks", "Tutorials people watch", "Process docs that work"],
   },
 ];
 
@@ -71,11 +71,11 @@ export default function Services() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-jaw-gray mb-4">
-            Our Services
+            What We're Cooking
           </h2>
           <p className="text-xl text-jaw-dark-silver max-w-3xl mx-auto">
-            Comprehensive video marketing solutions tailored to elevate your
-            small business
+            The hottest video content packages that'll have your business 
+            absolutely crushing it
           </p>
         </motion.div>
 

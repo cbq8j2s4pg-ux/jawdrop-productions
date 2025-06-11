@@ -25,14 +25,6 @@ export default function Hero() {
       ></div>
 
       <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4 pt-20">
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-6xl font-bold mb-8 text-white"
-        >
-          JAW Drop Productions
-        </motion.h2>
         
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -40,7 +32,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
         >
-          Create Videos That Make Jaws{" "}
+          Create Videos That Make JAWS{" "}
           <span className="text-jaw-silver">Drop</span>
         </motion.h1>
 
@@ -50,8 +42,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-xl md:text-2xl mb-32 opacity-90 max-w-2xl mx-auto"
         >
-          Professional video marketing that transforms small businesses into
-          industry leaders through compelling visual storytelling.
+          We make sick videos that get your business noticed. 
+          No cap - our content hits different and gets results.
         </motion.p>
 
         <motion.div
@@ -64,13 +56,13 @@ export default function Hero() {
             onClick={() => scrollToSection("contact")}
             className="bg-jaw-silver hover:bg-jaw-gold text-jaw-gray font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105"
           >
-            Start Your Project
+            Let's Go Bro!
           </button>
           <button
             onClick={() => scrollToSection("portfolio")}
             className="border-2 border-jaw-silver text-jaw-silver hover:bg-jaw-silver hover:text-jaw-gray font-semibold px-8 py-4 rounded-lg transition-all duration-300"
           >
-            View Our Work
+            Check Out The Fire
           </button>
         </motion.div>
       </div>
