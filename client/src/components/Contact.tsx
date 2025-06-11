@@ -133,7 +133,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-jaw-light rounded-2xl p-8"
+            className="bg-white rounded-2xl p-8 border border-jaw-silver"
           >
             <h3 className="text-2xl font-bold text-jaw-gray mb-6">
               Get Your Free Consultation
