@@ -109,7 +109,7 @@ export default function Footer() {
           className="border-t border-jaw-dark-silver mt-8 pt-8 text-center text-jaw-silver"
         >
           <p>
-            &copy; 2024 JAW Drop Productions. All rights reserved. |
+            &copy; 2025 JAW Drop Productions. All rights reserved. |
             Transforming small businesses through video marketing.
           </p>
         </motion.div>

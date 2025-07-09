@@ -32,7 +32,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
         >
-          Create Videos That Make JAWS{" "}
+          We Create Videos That Make JAWS{" "}
           <span className="text-jaw-silver">Drop</span>
         </motion.h1>
 
