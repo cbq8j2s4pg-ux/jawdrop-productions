@@ -14,7 +14,7 @@ export default function Footer() {
     { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Instagram, href: "#", label: "Instagram" },
     { icon: Youtube, href: "#", label: "YouTube" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    // { icon: Linkedin, href: "#", label: "LinkedIn" },
     { icon: FaTiktok, href: "#", label: "TikTok" },
   ];
 
@@ -87,9 +87,9 @@ export default function Footer() {
           >
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-jaw-silver">
-              <li>(555) 123-4567</li>
-              <li>hello@jawdropproductions.com</li>
-              <li>Los Angeles, CA</li>
+              {/* <li>(555) 123-4567</li> */}
+              {/*<li>hello@jawdropproductions.com</li> */}
+              <li>Milwaukee, WI</li>
               <li>
                 <button
                   onClick={() => scrollToSection("contact")}

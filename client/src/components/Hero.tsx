@@ -25,15 +25,15 @@ export default function Hero() {
       ></div>
 
       <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4 pt-20">
-        
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
         >
-          We Create Videos That Make JAWS{" "}
-          <span className="text-jaw-silver">Drop</span>
+          I’m Not A Content Vendor
+          <br />
+          I’m A Brand Collaborator
         </motion.h1>
 
         <motion.p
@@ -42,8 +42,9 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-xl md:text-2xl mb-32 opacity-90 max-w-2xl mx-auto"
         >
-          We make sick videos that get your business noticed. 
-          No cap - our content hits different and gets results.
+          This Didn’t Start In A Studio. It Started Behind A Bar.
+          <br />
+          Content With A Pulse. Design With A Strategy.
         </motion.p>
 
         <motion.div
@@ -53,16 +54,16 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <button
-            onClick={() => scrollToSection("contact")}
-            className="bg-jaw-silver hover:bg-jaw-gold text-jaw-gray font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105"
-          >
-            Let's Go Bro!
-          </button>
-          <button
             onClick={() => scrollToSection("portfolio")}
             className="border-2 border-jaw-silver text-jaw-silver hover:bg-jaw-silver hover:text-jaw-gray font-semibold px-8 py-4 rounded-lg transition-all duration-300"
           >
-            Check Out The Fire
+            Work That’s Stopped The Scroll
+          </button>
+          <button
+            onClick={() => scrollToSection("contact")}
+            className="bg-jaw-silver hover:bg-jaw-gold text-jaw-gray font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105"
+          >
+            Let’s Build Something Bold
           </button>
         </motion.div>
       </div>

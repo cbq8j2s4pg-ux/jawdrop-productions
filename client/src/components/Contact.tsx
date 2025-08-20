@@ -89,7 +89,7 @@ export default function Contact() {
             </p>
 
             <div className="space-y-6">
-              <div className="flex items-center">
+              {/* <div className="flex items-center">
                 <div className="bg-jaw-gray text-white p-3 rounded-lg mr-4">
                   <Phone size={20} />
                 </div>
@@ -97,9 +97,9 @@ export default function Contact() {
                   <div className="font-semibold text-jaw-gray">Phone</div>
                   <div className="text-jaw-dark-silver">(555) 123-4567</div>
                 </div>
-              </div>
+              </div> */}
 
-              <div className="flex items-center">
+              {/* <div className="flex items-center">
                 <div className="bg-jaw-gray text-white p-3 rounded-lg mr-4">
                   <Mail size={20} />
                 </div>
@@ -107,7 +107,7 @@ export default function Contact() {
                   <div className="font-semibold text-jaw-gray">Email</div>
                   <div className="text-jaw-dark-silver">hello@jawdropproductions.com</div>
                 </div>
-              </div>
+              </div> */}
 
               <div className="flex items-center">
                 <div className="bg-jaw-gray text-white p-3 rounded-lg mr-4">
@@ -115,15 +115,15 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="font-semibold text-jaw-gray">Location</div>
-                  <div className="text-jaw-dark-silver">Los Angeles, CA</div>
+                  <div className="text-jaw-dark-silver">Milwaukee, WI</div>
                 </div>
               </div>
             </div>
 
             <div className="mt-8">
               <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400"
-                alt="Professional business consultation meeting"
+                src="/attached_assets/IMG_4718_1749663103681.jpeg"
+                alt="Professional video production behind the scenes"
                 className="rounded-xl shadow-lg w-full"
               />
             </div>
