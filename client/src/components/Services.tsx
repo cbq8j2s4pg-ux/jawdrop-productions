@@ -142,7 +142,7 @@ export default function Services() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16 bg-gradient-to-r from-jaw-gray to-jaw-dark-silver rounded-2xl p-12 text-center text-white"
+          className="mt-16 bg-gradient-to-r from-jaw-gray to-jaw-dark-silver rounded-2xl p-12 text-center text-jaw-gray"
         >
           <div className="max-w-4xl mx-auto">
             <div className="mb-8">
@@ -151,7 +151,7 @@ export default function Services() {
             <h3 className="text-3xl md:text-4xl font-bold mb-6">
               Don't See Exactly What You Need?
             </h3>
-            <p className="text-xl mb-8 text-jaw-silver">
+            <p className="text-xl mb-8 text-jaw-dark-silver">
               Custom projects and creative collaborations are always welcome. 
               Tell us your idea—we'll tell you how we make it absolutely legendary.
             </p>

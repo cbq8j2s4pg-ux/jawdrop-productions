@@ -40,7 +40,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-xl md:text-2xl mb-32 opacity-90 max-w-2xl mx-auto"
+          className="text-xl md:text-2xl mb-40 opacity-90 max-w-2xl mx-auto"
         >
           This Didn’t Start In A Studio. It Started Behind A Bar.
           <br />
@@ -51,11 +51,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-8 justify-center"
         >
           <button
             onClick={() => scrollToSection("portfolio")}
-            className="border-2 border-jaw-silver text-jaw-silver hover:bg-jaw-silver hover:text-jaw-gray font-semibold px-8 py-4 rounded-lg transition-all duration-300"
+            className="border-2 border-jaw-silver text-jaw-silver hover:bg-jaw-silver hover:text-black font-semibold px-8 py-4 rounded-lg transition-all duration-300"
           >
             Work That’s Stopped The Scroll
           </button>
