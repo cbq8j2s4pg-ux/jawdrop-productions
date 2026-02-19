@@ -157,14 +157,11 @@
 @keyframes shimmerGold {
   0% {
     background-position: -200% center;
-    color: #ffffff;
-  }
-  30% {
-    color: transparent;
+    -webkit-text-fill-color: #C5A44E;
   }
   100% {
     background-position: 200% center;
-    color: transparent;
+    -webkit-text-fill-color: transparent;
   }
 }
 
@@ -173,28 +170,27 @@
   animation-delay: 2.6s;
   background: linear-gradient(
     90deg,
-    #C5A44E 0%,
-    #E8D48B 25%,
-    #FCEABB 50%,
-    #E8D48B 75%,
-    #C5A44E 100%
+    #A8893A 0%,
+    #C5A44E 25%,
+    #D4B65C 50%,
+    #C5A44E 75%,
+    #A8893A 100%
   );
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-fill-color: white;
+  -webkit-text-fill-color: #C5A44E;
 }
 
 .shimmer-gold-active {
   -webkit-text-fill-color: transparent;
   background: linear-gradient(
     90deg,
-    #C5A44E 0%,
-    #E8D48B 25%,
-    #FCEABB 50%,
-    #E8D48B 75%,
-    #C5A44E 100%
+    #A8893A 0%,
+    #C5A44E 25%,
+    #D4B65C 50%,
+    #C5A44E 75%,
+    #A8893A 100%
   );
   background-size: 200% auto;
   background-clip: text;
