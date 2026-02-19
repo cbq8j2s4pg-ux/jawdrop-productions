@@ -47,8 +47,13 @@ export default function Navigation() {
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="text-white font-bold hover:text-jaw-silver transition-colors duration-200 text-lg uppercase"
-                style={{ fontFamily: "'Teko', sans-serif", letterSpacing: '0.05em' }}
+                className={`font-bold transition-all duration-500 text-lg uppercase ${isScrolled ? 'hover:text-yellow-200' : 'hover:text-jaw-silver'}`}
+                style={{
+                  fontFamily: "'Teko', sans-serif",
+                  letterSpacing: '0.05em',
+                  color: isScrolled ? '#C5A44E' : '#ffffff',
+                  textShadow: isScrolled ? '0 0 8px rgba(197, 164, 78, 0.3)' : 'none',
+                }}
               >
                 {link.label}
               </button>
@@ -78,8 +83,13 @@ export default function Navigation() {
                   <button
                     key={link.href}
                     onClick={() => scrollToSection(link.href)}
-                    className="block w-full text-left px-4 py-2 text-white font-bold hover:text-jaw-silver hover:bg-jaw-blue transition-colors duration-200 uppercase"
-                    style={{ fontFamily: "'Teko', sans-serif", letterSpacing: '0.05em' }}
+                    className={`block w-full text-left px-4 py-2 font-bold hover:bg-jaw-blue transition-all duration-500 uppercase ${isScrolled ? 'hover:text-yellow-200' : 'hover:text-jaw-silver'}`}
+                    style={{
+                      fontFamily: "'Teko', sans-serif",
+                      letterSpacing: '0.05em',
+                      color: isScrolled ? '#C5A44E' : '#ffffff',
+                      textShadow: isScrolled ? '0 0 8px rgba(197, 164, 78, 0.3)' : 'none',
+                    }}
                   >
                     {link.label}
                   </button>
