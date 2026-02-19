@@ -1,15 +1,18 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { X } from "lucide-react";
+import { X, Play } from "lucide-react";
 import newWorkImg from "@assets/New Work.jpg";
+import drinkImg from "@assets/Drink.jpg";
+import littleCeasarVideo from "@assets/Little Ceasar Pleaser.mp4";
 
 type PortfolioItem = {
   id: number;
   title: string;
   description: string;
   category: string;
-  image: string;
+  image?: string;
+  video?: string;
 };
 
 const portfolioItems: PortfolioItem[] = [
@@ -20,13 +23,28 @@ const portfolioItems: PortfolioItem[] = [
     category: "Design",
     image: newWorkImg,
   },
-  // Add more items here as you get more work images
+  {
+    id: 2,
+    title: "Little Ceasar Pleaser",
+    description: "Short-form video content that grabs attention and stops the scroll.",
+    category: "Video",
+    video: littleCeasarVideo,
+  },
+  {
+    id: 3,
+    title: "Drink",
+    description: "Eye-catching product photography that makes you want to reach for a glass.",
+    category: "Photography",
+    image: drinkImg,
+  },
 ];
 
 export default function Portfolio() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const [expandedItem, setExpandedItem] = useState<number | null>(null);
+
+  const expandedData = portfolioItems.find((i) => i.id === expandedItem);
 
   return (
     <section id="portfolio" className="py-20 bg-jaw-gray text-white">
@@ -52,17 +70,34 @@ export default function Portfolio() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group relative bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden cursor-pointer"
-              onMouseEnter={() => setExpandedItem(item.id)}
-              onMouseLeave={() => setExpandedItem(null)}
+              onClick={() => setExpandedItem(item.id)}
             >
               {/* Cropped preview */}
               <div className="aspect-[4/3] overflow-hidden relative">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300" />
+                {item.video ? (
+                  <>
+                    <video
+                      src={item.video}
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition-colors duration-300">
+                      <div className="bg-white/30 backdrop-blur-sm p-4 rounded-full group-hover:bg-white/50 transition-colors duration-300">
+                        <Play size={32} className="text-white ml-1" />
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300" />
+                  </>
+                )}
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-white">{item.title}</h3>
@@ -73,8 +108,8 @@ export default function Portfolio() {
           ))}
         </div>
 
-        {/* Expanded overlay - shows full image when hovered */}
-        {expandedItem && (
+        {/* Expanded overlay - shows full image or video */}
+        {expandedItem && expandedData && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -96,17 +131,29 @@ export default function Portfolio() {
               >
                 <X size={20} />
               </button>
-              <img
-                src={portfolioItems.find((i) => i.id === expandedItem)?.image}
-                alt={portfolioItems.find((i) => i.id === expandedItem)?.title}
-                className="w-full h-auto max-h-[85vh] object-contain rounded-xl shadow-2xl"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-xl">
+
+              {expandedData.video ? (
+                <video
+                  src={expandedData.video}
+                  controls
+                  autoPlay
+                  playsInline
+                  className="w-full max-h-[85vh] rounded-xl shadow-2xl"
+                />
+              ) : (
+                <img
+                  src={expandedData.image}
+                  alt={expandedData.title}
+                  className="w-full h-auto max-h-[85vh] object-contain rounded-xl shadow-2xl"
+                />
+              )}
+
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-xl pointer-events-none">
                 <h3 className="text-2xl font-bold text-white">
-                  {portfolioItems.find((i) => i.id === expandedItem)?.title}
+                  {expandedData.title}
                 </h3>
                 <p className="text-jaw-silver mt-1">
-                  {portfolioItems.find((i) => i.id === expandedItem)?.description}
+                  {expandedData.description}
                 </p>
               </div>
             </motion.div>
