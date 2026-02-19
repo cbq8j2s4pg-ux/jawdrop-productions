@@ -7,6 +7,7 @@ import drinkImg from "@assets/Drink.jpg";
 import littleCeasarVideo from "@assets/Little Ceasar Pleaser.mp4";
 import motionGraphicVideo from "@assets/Motion Graphic.mp4";
 import tueCueVideo from "@assets/Tue Cue.mp4";
+import reviewsVideo from "@assets/Reviews.mp4";
 
 type PortfolioItem = {
   id: number;
@@ -52,6 +53,13 @@ const portfolioItems: PortfolioItem[] = [
     description: "Punchy short-form content crafted to connect and convert.",
     category: "Video",
     video: tueCueVideo,
+  },
+  {
+    id: 6,
+    title: "Reviews",
+    description: "Customer testimonials brought to life through compelling video storytelling.",
+    category: "Video",
+    video: reviewsVideo,
   },
 ];
 
