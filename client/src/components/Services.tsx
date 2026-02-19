@@ -29,6 +29,7 @@ export default function Services() {
       description:
         "Need a menu that doesn't look like it was made in Word? We got you covered with designs that actually convert.",
       features: ["Fire menus", "Killer posters", "Promo flyers that pop", "Event materials that wow"],
+      bgImage: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=800&q=80",
     },
     {
       icon: Zap,
@@ -40,6 +41,7 @@ export default function Services() {
         "Eye-catching visual variety that pops",
         "Social-ready edits that go viral",
       ],
+      bgImage: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=800&q=80",
     },
     {
       icon: Sparkles,
@@ -51,6 +53,7 @@ export default function Services() {
         "Social post templates that slap",
         "Visual guidelines that actually work",
       ],
+      bgImage: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80",
     },
     {
       icon: Camera,
@@ -63,6 +66,7 @@ export default function Services() {
         "Actionable recommendations that work",
         "Delivered as a visual breakdown",
       ],
+      bgImage: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80",
     },
     {
       icon: Calendar,
@@ -75,6 +79,7 @@ export default function Services() {
         "Captions + scheduling that converts",
         "Strategy + reporting that shows results",
       ],
+      bgImage: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&w=800&q=80",
     },
     {
       icon: Video,
@@ -87,6 +92,7 @@ export default function Services() {
         "Platform-optimized for maximum reach",
         "Custom branded style (not basic trends)",
       ],
+      bgImage: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80",
     },
   ];
 
@@ -104,7 +110,7 @@ export default function Services() {
             What We're Cooking
           </h2>
           <p className="text-xl text-jaw-dark-silver max-w-3xl mx-auto">
-            The hottest video content packages that'll have your business 
+            The hottest video content packages that'll have your business
             absolutely crushing it
           </p>
         </motion.div>
@@ -116,23 +122,34 @@ export default function Services() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-2xl p-8 hover:shadow-lg transition-all duration-300 group border border-jaw-silver"
+              className="relative rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group border border-jaw-silver min-h-[420px]"
             >
-              <div className="bg-jaw-gray text-white p-4 rounded-xl inline-flex mb-6 group-hover:bg-jaw-silver group-hover:text-jaw-gray transition-colors duration-300">
-                <service.icon size={24} />
+              {/* Background image */}
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                style={{ backgroundImage: `url(${service.bgImage})` }}
+              />
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition-colors duration-300" />
+
+              {/* Content */}
+              <div className="relative z-10 p-8">
+                <div className="bg-white/20 backdrop-blur-sm text-white p-4 rounded-xl inline-flex mb-6 group-hover:bg-white/30 transition-colors duration-300">
+                  <service.icon size={24} />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-gray-200 mb-6">{service.description}</p>
+                <ul className="text-gray-200 space-y-2">
+                  {service.features.map((feature) => (
+                    <li key={feature} className="flex items-center">
+                      <Check className="text-jaw-silver mr-2 flex-shrink-0" size={16} />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="text-2xl font-bold text-jaw-gray mb-4">
-                {service.title}
-              </h3>
-              <p className="text-jaw-dark-silver mb-6">{service.description}</p>
-              <ul className="text-jaw-dark-silver space-y-2">
-                {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center">
-                    <Check className="text-jaw-silver mr-2" size={16} />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
             </motion.div>
           ))}
         </div>
@@ -152,7 +169,7 @@ export default function Services() {
               Don't See Exactly What You Need?
             </h3>
             <p className="text-xl mb-8 text-jaw-dark-silver">
-              Custom projects and creative collaborations are always welcome. 
+              Custom projects and creative collaborations are always welcome.
               Tell us your idea—we'll tell you how we make it absolutely legendary.
             </p>
             <button
