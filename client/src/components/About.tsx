@@ -19,7 +19,8 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-jaw-gray mb-6">
-              We Make Your Business{" "}
+              I Make Your Business
+              <br />
               <span className="text-jaw-dark-silver">ABSOLUTELY LEGENDARY</span>
             </h2>
             <p className="text-lg text-jaw-dark-silver mb-6 leading-relaxed">
