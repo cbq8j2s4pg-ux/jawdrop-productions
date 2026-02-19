@@ -12,66 +12,57 @@ import {
   Rocket,
 } from "lucide-react";
 
-function TypewriterBubble({ text, author, title, isActive, delay = 0 }: { text: string; author: string; title: string; isActive: boolean; delay?: number }) {
-  const [displayedText, setDisplayedText] = useState("");
-  const [started, setStarted] = useState(false);
-  const [typingDone, setTypingDone] = useState(false);
+function iMessageBubble({ text, sender, subtitle, color, isVisible, delay }: { text: string; sender: string; subtitle: string; color: string; isVisible: boolean; delay: number }) {
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
-    if (!isActive) return;
-    const delayTimer = setTimeout(() => setStarted(true), delay);
-    return () => clearTimeout(delayTimer);
-  }, [isActive, delay]);
-
-  useEffect(() => {
-    if (!started) return;
-    let i = 0;
-    const interval = setInterval(() => {
-      i++;
-      setDisplayedText(text.slice(0, i));
-      if (i >= text.length) {
-        clearInterval(interval);
-        setTimeout(() => setTypingDone(true), 400);
-      }
-    }, 35);
-    return () => clearInterval(interval);
-  }, [started, text]);
+    if (!isVisible) return;
+    const timer = setTimeout(() => setShow(true), delay);
+    return () => clearTimeout(timer);
+  }, [isVisible, delay]);
 
   return (
-    <div className="flex flex-col items-start">
-      <div
-        className="relative bg-jaw-gray text-white px-6 py-4 rounded-2xl rounded-bl-sm max-w-2xl shadow-lg"
-        style={{ minHeight: '80px' }}
-      >
-        <p className="text-lg leading-relaxed" style={{ fontFamily: "'Source Sans 3', sans-serif" }}>
-          {displayedText}
-          {started && displayedText.length < text.length && (
-            <span className="inline-block w-0.5 h-5 bg-white ml-0.5 animate-pulse align-middle" />
-          )}
-        </p>
-        {/* Chat bubble tail */}
-        <div
-          className="absolute bottom-0 -left-2 w-4 h-4 bg-jaw-gray"
-          style={{ clipPath: 'polygon(100% 0, 100% 100%, 0 100%)' }}
-        />
+    <motion.div
+      initial={{ opacity: 0, y: 20, scale: 0.9 }}
+      animate={show ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 20, scale: 0.9 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      className="flex flex-col items-start"
+    >
+      <div className="text-xs font-semibold mb-1 ml-3" style={{ color: color, fontFamily: "'Source Sans 3', sans-serif", textTransform: 'none' }}>
+        {sender} <span className="font-normal text-gray-400">· {subtitle}</span>
       </div>
-      {/* Author signature - fades in after typing completes */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={typingDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 0.5 }}
-        className="mt-3 ml-4"
+      <div
+        className="relative px-4 py-3 rounded-2xl rounded-bl-sm max-w-md shadow-sm"
+        style={{ backgroundColor: '#E9E9EB' }}
       >
-        <div className="font-bold text-jaw-gray" style={{ fontFamily: "'Source Sans 3', sans-serif" }}>{author}</div>
-        <div className="text-sm text-jaw-dark-silver" style={{ fontFamily: "'Source Sans 3', sans-serif" }}>{title}</div>
-      </motion.div>
-    </div>
+        <p className="text-base leading-relaxed text-black" style={{ fontFamily: "'Source Sans 3', sans-serif", textTransform: 'none' }}>
+          {text}
+        </p>
+      </div>
+    </motion.div>
   );
 }
 
 function TestimonialsSection() {
   const testimonialRef = useRef(null);
   const testimonialInView = useInView(testimonialRef, { once: true });
+
+  const messages = [
+    {
+      text: "Jonathan Wiess was our amazing guy behind the camera this weekend. I was blown away by his quick turnaround time with productions. He has mass potential to help us get next level status! We are happy to have him.",
+      sender: "Lorena L.",
+      subtitle: "Lake Country Cards, Owner",
+      color: "#34C759",
+      delay: 600,
+    },
+    {
+      text: "Certainly couldn't do it without Jonathans help. I'm truly blessed.",
+      sender: "Erin D.",
+      subtitle: "Sweet E's Confections, Owner",
+      color: "#007AFF",
+      delay: 1800,
+    },
+  ];
 
   return (
     <motion.div
@@ -84,14 +75,56 @@ function TestimonialsSection() {
       <h3 className="text-3xl md:text-4xl font-bold text-jaw-gray mb-10 text-center">
         Client Testimonials
       </h3>
-      <div className="max-w-3xl mx-auto space-y-4">
-        <TypewriterBubble
-          text="Jonathan Wiess was our amazing guy behind the camera this weekend. I was blown away by his quick turnaround time with productions. He has mass potential to help us get next level status! We are happy to have him."
-          author="Lorena L."
-          title="Lake Country Cards, Owner"
-          isActive={testimonialInView}
-          delay={500}
-        />
+
+      {/* iPhone-style group chat */}
+      <div className="max-w-md mx-auto">
+        {/* iPhone frame */}
+        <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-200" style={{ backgroundColor: '#FFFFFF' }}>
+          {/* Status bar */}
+          <div className="px-6 pt-3 pb-1 flex justify-between items-center" style={{ backgroundColor: '#F6F6F6' }}>
+            <span className="text-xs font-semibold text-gray-800" style={{ fontFamily: "'Source Sans 3', sans-serif", textTransform: 'none' }}>9:41</span>
+            <div className="flex items-center gap-1">
+              <div className="flex gap-0.5">
+                <div className="w-1 h-1.5 bg-gray-800 rounded-sm" />
+                <div className="w-1 h-2 bg-gray-800 rounded-sm" />
+                <div className="w-1 h-2.5 bg-gray-800 rounded-sm" />
+                <div className="w-1 h-3 bg-gray-800 rounded-sm" />
+              </div>
+              <svg className="w-4 h-3 text-gray-800 ml-1" viewBox="0 0 24 16" fill="currentColor"><path d="M1 4.5C1 3.67 1.67 3 2.5 3h19c.83 0 1.5.67 1.5 1.5v9c0 .83-.67 1.5-1.5 1.5h-19C1.67 14 1 13.33 1 12.5v-9z" stroke="currentColor" strokeWidth="1" fill="none"/><rect x="2.5" y="4.5" width="17" height="7" rx="0.5" fill="currentColor" opacity="0.9"/><path d="M24 8.5a1.5 1.5 0 01-1.5 1.5V7a1.5 1.5 0 011.5 1.5z" fill="currentColor"/></svg>
+            </div>
+          </div>
+
+          {/* Chat header */}
+          <div className="px-4 py-3 text-center border-b border-gray-200" style={{ backgroundColor: '#F6F6F6' }}>
+            <div className="flex items-center justify-center gap-2 mb-0.5">
+              <div className="flex -space-x-2">
+                <div className="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold" style={{ backgroundColor: '#34C759', fontFamily: "'Source Sans 3', sans-serif", textTransform: 'none' }}>L</div>
+                <div className="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold" style={{ backgroundColor: '#007AFF', fontFamily: "'Source Sans 3', sans-serif", textTransform: 'none' }}>E</div>
+              </div>
+            </div>
+            <div className="font-semibold text-base text-gray-900" style={{ fontFamily: "'Source Sans 3', sans-serif", textTransform: 'none' }}>JAW DROP Praise</div>
+            <div className="text-xs text-gray-400" style={{ fontFamily: "'Source Sans 3', sans-serif", textTransform: 'none' }}>2 people</div>
+          </div>
+
+          {/* Messages area */}
+          <div className="px-4 py-6 space-y-4" style={{ backgroundColor: '#FFFFFF', minHeight: '280px' }}>
+            {messages.map((msg, index) => (
+              <div key={index}>
+                {iMessageBubble({ ...msg, isVisible: testimonialInView })}
+              </div>
+            ))}
+          </div>
+
+          {/* Message input bar */}
+          <div className="px-4 py-3 border-t border-gray-200 flex items-center gap-2" style={{ backgroundColor: '#F6F6F6' }}>
+            <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center">
+              <span className="text-gray-500 text-lg font-bold" style={{ lineHeight: 1 }}>+</span>
+            </div>
+            <div className="flex-1 bg-white rounded-full px-4 py-2 border border-gray-300">
+              <span className="text-gray-400 text-sm" style={{ fontFamily: "'Source Sans 3', sans-serif", textTransform: 'none' }}>iMessage</span>
+            </div>
+          </div>
+        </div>
       </div>
     </motion.div>
   );
