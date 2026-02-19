@@ -69,6 +69,13 @@ function TestimonialsSection() {
       color: "#FF9500",
       delay: 3000,
     },
+    {
+      text: "Jon was wonderful to work with. He's very attentive, communicates effectively, is punctual, and brings your vision to life! Definitely recommend",
+      sender: "Shannon S.",
+      subtitle: "Traveling Touch Massage, Owner",
+      color: "#AF52DE",
+      delay: 4200,
+    },
   ];
 
   return (
@@ -108,10 +115,11 @@ function TestimonialsSection() {
                 <div className="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold" style={{ backgroundColor: '#34C759', fontFamily: "'Source Sans 3', sans-serif", textTransform: 'none' }}>L</div>
                 <div className="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold" style={{ backgroundColor: '#007AFF', fontFamily: "'Source Sans 3', sans-serif", textTransform: 'none' }}>E</div>
                 <div className="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold" style={{ backgroundColor: '#FF9500', fontFamily: "'Source Sans 3', sans-serif", textTransform: 'none' }}>C</div>
+                <div className="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold" style={{ backgroundColor: '#AF52DE', fontFamily: "'Source Sans 3', sans-serif", textTransform: 'none' }}>S</div>
               </div>
             </div>
             <div className="font-semibold text-base text-gray-900" style={{ fontFamily: "'Source Sans 3', sans-serif", textTransform: 'none' }}>JAW DROP Praise</div>
-            <div className="text-xs text-gray-400" style={{ fontFamily: "'Source Sans 3', sans-serif", textTransform: 'none' }}>3 people</div>
+            <div className="text-xs text-gray-400" style={{ fontFamily: "'Source Sans 3', sans-serif", textTransform: 'none' }}>4 people</div>
           </div>
 
           {/* Messages area */}
