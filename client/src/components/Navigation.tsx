@@ -47,7 +47,8 @@ export default function Navigation() {
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="text-white font-bold hover:text-jaw-silver transition-colors duration-200 text-lg"
+                className="text-white font-bold hover:text-jaw-silver transition-colors duration-200 text-lg uppercase"
+                style={{ fontFamily: "'Teko', sans-serif", letterSpacing: '0.05em' }}
               >
                 {link.label}
               </button>
@@ -77,7 +78,8 @@ export default function Navigation() {
                   <button
                     key={link.href}
                     onClick={() => scrollToSection(link.href)}
-                    className="block w-full text-left px-4 py-2 text-white font-bold hover:text-jaw-silver hover:bg-jaw-blue transition-colors duration-200"
+                    className="block w-full text-left px-4 py-2 text-white font-bold hover:text-jaw-silver hover:bg-jaw-blue transition-colors duration-200 uppercase"
+                    style={{ fontFamily: "'Teko', sans-serif", letterSpacing: '0.05em' }}
                   >
                     {link.label}
                   </button>
