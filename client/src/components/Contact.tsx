@@ -146,7 +146,7 @@ export default function Contact() {
             className="bg-white rounded-2xl p-8 border border-jaw-silver"
           >
             <h3 className="text-2xl font-bold text-jaw-gray mb-6">
-              Get Your Free Consultation
+              Want To Talk About Your Project?
             </h3>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <div>
