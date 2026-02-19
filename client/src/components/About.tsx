@@ -103,7 +103,7 @@ export default function About() {
               className="absolute -bottom-6 -right-6 bg-jaw-silver text-jaw-gray p-6 rounded-xl shadow-lg"
             >
               <Zap className="text-3xl mb-2" />
-              <div className="font-bold">Aerial Excellence</div>
+              <div className="font-bold">FOCUSED WORK</div>
             </motion.div>
           </motion.div>
         </div>
