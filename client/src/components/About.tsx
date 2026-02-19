@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Zap } from "lucide-react";
+import aboutImage from "@assets/2.jpg";
 
 export default function About() {
   const ref = useRef(null);
@@ -66,9 +67,9 @@ export default function About() {
             className="relative"
           >
             <img
-              src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&h=700&sat=-100"
-              alt="Professional drone in flight for aerial cinematography"
-              className="rounded-2xl shadow-2xl w-full grayscale"
+              src={aboutImage}
+              alt="JAW Drop Productions"
+              className="rounded-2xl shadow-2xl w-full"
             />
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
