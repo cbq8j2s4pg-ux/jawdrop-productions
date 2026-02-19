@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import {
   Video,
   Check,
@@ -11,6 +11,75 @@ import {
   Sparkles,
   Rocket,
 } from "lucide-react";
+
+function TypewriterBubble({ text, isActive, delay = 0 }: { text: string; isActive: boolean; delay?: number }) {
+  const [displayedText, setDisplayedText] = useState("");
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    if (!isActive) return;
+    const delayTimer = setTimeout(() => setStarted(true), delay);
+    return () => clearTimeout(delayTimer);
+  }, [isActive, delay]);
+
+  useEffect(() => {
+    if (!started) return;
+    let i = 0;
+    const interval = setInterval(() => {
+      i++;
+      setDisplayedText(text.slice(0, i));
+      if (i >= text.length) clearInterval(interval);
+    }, 35);
+    return () => clearInterval(interval);
+  }, [started, text]);
+
+  return (
+    <div className="flex justify-start">
+      <div
+        className="relative bg-jaw-gray text-white px-6 py-4 rounded-2xl rounded-bl-sm max-w-2xl shadow-lg"
+        style={{ minHeight: '80px' }}
+      >
+        <p className="text-lg leading-relaxed" style={{ fontFamily: "'Source Sans 3', sans-serif" }}>
+          {displayedText}
+          {started && displayedText.length < text.length && (
+            <span className="inline-block w-0.5 h-5 bg-white ml-0.5 animate-pulse align-middle" />
+          )}
+        </p>
+        {/* Chat bubble tail */}
+        <div
+          className="absolute bottom-0 -left-2 w-4 h-4 bg-jaw-gray"
+          style={{ clipPath: 'polygon(100% 0, 100% 100%, 0 100%)' }}
+        />
+      </div>
+    </div>
+  );
+}
+
+function TestimonialsSection() {
+  const testimonialRef = useRef(null);
+  const testimonialInView = useInView(testimonialRef, { once: true });
+
+  return (
+    <motion.div
+      ref={testimonialRef}
+      initial={{ opacity: 0, y: 30 }}
+      animate={testimonialInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{ duration: 0.8 }}
+      className="mt-16"
+    >
+      <h3 className="text-3xl md:text-4xl font-bold text-jaw-gray mb-10 text-center">
+        Client Testimonials
+      </h3>
+      <div className="max-w-3xl mx-auto space-y-4">
+        <TypewriterBubble
+          text="Jonathan Wiess was our amazing guy behind the camera this weekend. I was blown away by his quick turnaround time with productions. He has mass potential to help us get next level status! We are happy to have him."
+          isActive={testimonialInView}
+          delay={500}
+        />
+      </div>
+    </motion.div>
+  );
+}
 
 import printImg from "@assets/print.jpg";
 import droneImg from "@assets/drone.jpg";
@@ -161,52 +230,7 @@ export default function Services() {
         </div>
 
         {/* Client Testimonials */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16"
-        >
-          <h3 className="text-3xl md:text-4xl font-bold text-jaw-gray mb-10 text-center">
-            Client Testimonials
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                quote: "JAW Drop completely transformed our social media presence. We went from barely getting any engagement to having people actually reach out because of what they saw online.",
-                name: "Mike R.",
-                business: "Restaurant Owner",
-              },
-              {
-                quote: "I'd been managing my own page for years with nothing to show for it. Jonathan took over and within a month I could see the difference. The content actually looks professional now.",
-                name: "Sarah T.",
-                business: "Boutique Owner",
-              },
-              {
-                quote: "The drone footage alone was worth it. But the whole package — the branding refresh, the video content, the strategy — it made my business look like a major operation.",
-                name: "David L.",
-                business: "Event Venue Manager",
-              },
-            ].map((testimonial, index) => (
-              <motion.div
-                key={testimonial.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.5, delay: 0.9 + index * 0.15 }}
-                className="bg-white rounded-2xl p-8 shadow-md border border-jaw-silver relative"
-              >
-                <div className="text-5xl font-bold mb-4" style={{ color: '#C5A44E', fontFamily: 'Georgia, serif' }}>"</div>
-                <p className="text-jaw-dark-silver mb-6 leading-relaxed italic">
-                  {testimonial.quote}
-                </p>
-                <div className="border-t border-jaw-silver pt-4">
-                  <div className="font-bold text-jaw-gray">{testimonial.name}</div>
-                  <div className="text-sm text-jaw-dark-silver">{testimonial.business}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        <TestimonialsSection />
       </div>
     </section>
   );
