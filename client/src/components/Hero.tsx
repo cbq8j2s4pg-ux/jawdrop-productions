@@ -70,7 +70,7 @@ export default function Hero() {
         >
           This Didn't Start In A Studio. It Started Behind A Bar.
           <br />
-          Content With Purpose. Design With Strategy.
+          <span style={{ color: '#C5A44E' }}>Content With Purpose. Design With Strategy.</span>
         </motion.p>
 
         <motion.div
