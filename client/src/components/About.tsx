@@ -1,12 +1,34 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Zap } from "lucide-react";
 import aboutImage from "@assets/2.jpg";
+
+function useCountUp(target: number, isActive: boolean, duration: number = 2000) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (!isActive) return;
+    let start = 0;
+    const startTime = performance.now();
+    const step = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(eased * target);
+      setCount(current);
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [isActive, target, duration]);
+  return count;
+}
 
 export default function About() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const projectCount = useCountUp(200, isInView, 2500);
+  const clientCount = useCountUp(100, isInView, 2500);
 
   return (
     <section id="about" className="py-20 bg-background">
@@ -43,7 +65,7 @@ export default function About() {
                   transition={{ duration: 0.5, delay: 0.3 }}
                   className="text-3xl font-bold text-jaw-gray mb-2"
                 >
-                  150+
+                  {projectCount}+
                 </motion.div>
                 <div className="text-jaw-dark-silver">Projects Delivered</div>
               </div>
@@ -54,7 +76,7 @@ export default function About() {
                   transition={{ duration: 0.5, delay: 0.5 }}
                   className="text-3xl font-bold text-jaw-gray mb-2"
                 >
-                  100%
+                  {clientCount}%
                 </motion.div>
                 <div className="text-jaw-dark-silver">Client Focused</div>
               </div>
