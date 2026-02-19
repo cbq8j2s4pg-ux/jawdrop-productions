@@ -23,16 +23,16 @@ export default function About() {
               <span className="text-jaw-dark-silver">Absolutely Legendary</span>
             </h2>
             <p className="text-lg text-jaw-dark-silver mb-6 leading-relaxed">
-              For almost 20 years, I worked in the service industry—bartender, server, manager, the whole grind. But a few years ago, I got handed control of a small business's social media… and something just clicked.
+              For almost 20 years, I lived the service industry. Bartending, serving, managing, all of it. Then a few years ago, someone handed me the keys to a small business's social media, and something clicked.
             </p>
             <p className="text-lg text-jaw-dark-silver mb-6 leading-relaxed">
-              I didn't want to just post specials. I wanted to make people feel something when they saw a burger. Or a flyer. Or a silly reel with a killer hook. Turns out, I wasn't just good at it—I was hooked.
+              I wasn't interested in just posting specials. I wanted people to feel something when they scrolled past a burger photo or a promo flyer. I wanted hooks that actually stopped thumbs. Turns out, I had a knack for it and I couldn't stop.
             </p>
             <p className="text-lg text-jaw-dark-silver mb-6 leading-relaxed">
-              So now? This is what I do. JAW DROP Productions is where creativity meets hustle. I help small businesses create content that's original, polished, and impossible to ignore.
+              That's how JAW DROP Productions was born. I help small businesses create content that's original, polished, and built to turn heads. No recycled templates. No filler. No agency markup. Just real work, made from scratch, with strategy and style behind every piece.
             </p>
             <p className="text-lg text-jaw-dark-silver mb-8 leading-relaxed">
-              No templates. No fluff. No overpriced agency bullshit. Just work that's built from scratch—with strategy, style, and intention. Whether it's a brunch menu, a promo video, or drone footage over your rooftop event—you're getting my full focus every time.
+              Whether you need a brunch menu, a promo video, or drone footage from your next big event, you're getting my full attention every single time.
             </p>
             <div className="grid grid-cols-2 gap-6">
               <div className="text-center">
