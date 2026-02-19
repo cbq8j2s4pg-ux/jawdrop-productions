@@ -91,12 +91,11 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-jaw-gray mb-6">
-              Ready to Create Something{" "}
-              <span className="text-jaw-dark-silver">Amazing?</span>
+              Ready to Get{" "}
+              <span className="text-jaw-dark-silver">Started?</span>
             </h2>
             <p className="text-xl text-jaw-dark-silver mb-8 leading-relaxed">
-              Let's discuss your video marketing goals and create content that
-              drives real results for your business.
+              Tell me what you're working on. I'll figure out the best way to make it happen.
             </p>
 
             <div className="space-y-6">
@@ -236,7 +235,7 @@ export default function Contact() {
               >
                 {isSubmitting
                   ? "Sending..."
-                  : "Send Message & Get Free Quote"}
+                  : "Let's Talk"}
               </Button>
             </form>
           </motion.div>

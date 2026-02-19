@@ -68,10 +68,9 @@ export default function Portfolio() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">The Heat We've Dropped</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Recent Work</h2>
           <p className="text-xl text-jaw-silver max-w-3xl mx-auto">
-            Check out these absolute bangers we've made for businesses just like yours.
-            This is what happens when you work with the best.
+            A look at what I've created for businesses across the Lake Country area and beyond.
           </p>
         </motion.div>
 

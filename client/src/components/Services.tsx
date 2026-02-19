@@ -32,72 +32,72 @@ export default function Services() {
   const services = [
     {
       icon: Printer,
-      title: "Print Design That Slaps",
+      title: "Print Design That Commands Attention",
       description:
-        "Need a menu that doesn't look like it was made in Word? We got you covered with designs that actually convert.",
-      features: ["Fire menus", "Killer posters", "Promo flyers that pop", "Event materials that wow"],
+        "Need a menu that actually reflects your brand? I design print materials that look sharp, communicate clearly, and convert.",
+      features: ["Menus", "Posters", "Promo flyers", "Event materials"],
       bgImage: printImg,
     },
     {
       icon: Zap,
-      title: "Drone Photo & Video That Hits Different",
+      title: "Aerial Photo & Video That Changes The Perspective",
       description:
-        "We capture your business from angles that'll blow people's minds. Perfect for showcasing exteriors, rooftops, events, or neighborhoods in a whole new light.",
+        "I capture your business from angles most people never see. Perfect for showcasing exteriors, rooftops, events, and neighborhoods in a whole new light.",
       features: [
         "Epic flyovers (outdoor, line of sight)",
-        "Eye-catching visual variety that pops",
-        "Social-ready edits that go viral",
+        "Eye-catching visual variety",
+        "Social-ready edits",
       ],
       bgImage: droneImg,
     },
     {
       icon: Sparkles,
-      title: "Brand Refresh & Visual Glow-Ups",
+      title: "Brand Refresh & Visual Identity",
       description:
-        "Outdated logo? Off-brand visuals? Let's sharpen your look without starting from scratch. We'll build a mini refresh kit to make your business look absolutely legendary everywhere it shows up.",
+        "Outdated logo? Inconsistent visuals? I'll sharpen your look without rebuilding from scratch. A focused refresh kit that makes your brand look polished and intentional everywhere it shows up.",
       features: [
-        "Fonts, colors, logo tweaks that hit",
-        "Social post templates that slap",
-        "Visual guidelines that actually work",
+        "Fonts, colors, logo tweaks",
+        "Social post templates",
+        "Visual guidelines",
       ],
       bgImage: brandImg,
     },
     {
       icon: Camera,
-      title: "Social Media Audits That Tell The Truth",
+      title: "Social Media Audits That Tell You The Truth",
       description:
-        "Not sure why your content isn't landing? We'll review your platforms and tell you exactly what's working, what's trash, and what needs to change ASAP.",
+        "Not sure why your content isn't landing? I'll review your platforms and give you a clear picture of what's working, what's not, and exactly what needs to change.",
       features: [
-        "Bio & brand reality check",
-        "Content review (no sugar coating)",
-        "Actionable recommendations that work",
-        "Delivered as a visual breakdown",
+        "Bio & brand review",
+        "Content analysis",
+        "Actionable recommendations",
+        "Visual breakdown delivered",
       ],
       bgImage: auditImg,
     },
     {
       icon: Calendar,
-      title: "Social Media Management That Actually Works",
+      title: "Social Media Management That Gets Results",
       description:
-        "Tired of managing your own page and getting zero results? We'll take the wheel and make your socials absolutely fire. Includes content creation, captions, posting, and strategy that converts.",
+        "Done managing your own page with nothing to show for it? I take the wheel. Content creation, captions, posting, and a real strategy that builds momentum.",
       features: [
-        "Weekly content calendar that bangs",
-        "Reels, carousels, stories that pop",
-        "Captions + scheduling that converts",
-        "Strategy + reporting that shows results",
+        "Weekly content calendar",
+        "Reels, carousels, stories",
+        "Captions + scheduling",
+        "Strategy + reporting",
       ],
       bgImage: managementImg,
     },
     {
       icon: Video,
-      title: "Booth Interviews & Short-Form Video That Goes Viral",
+      title: "Short-Form Video That Actually Grabs Attention",
       description:
-        "Reels don't have to be cringe. We create short-form video content that actually reflects your brand and grabs attention fast. No awkward camera moments, just pure fire content.",
+        "Reels don't have to feel forced. I create short-form content that reflects your brand and stops people mid-scroll. No awkward moments, just content that works.",
       features: [
-        "Filming + editing that looks pro",
-        "Captions + music that hits right",
-        "Platform-optimized for maximum reach",
-        "Custom branded style (not basic trends)",
+        "Filming + editing",
+        "Captions + music",
+        "Platform-optimized",
+        "Custom branded style",
       ],
       bgImage: videoImg,
     },
@@ -114,11 +114,10 @@ export default function Services() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-jaw-gray mb-4">
-            What We're Cooking
+            What I Bring To The Table
           </h2>
           <p className="text-xl text-jaw-dark-silver max-w-3xl mx-auto">
-            The hottest video content packages that'll have your business
-            absolutely crushing it
+            Creative services built for small businesses that are serious about standing out.
           </p>
         </motion.div>
 
@@ -177,13 +176,13 @@ export default function Services() {
             </h3>
             <p className="text-xl mb-8 text-jaw-dark-silver">
               Custom projects and creative collaborations are always welcome.
-              Tell us your idea—we'll tell you how we make it absolutely legendary.
+              Tell me your idea and I'll tell you how we make it happen.
             </p>
             <button
               onClick={() => scrollToSection("contact")}
               className="bg-jaw-silver hover:bg-jaw-gold text-jaw-gray font-bold text-xl px-12 py-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              Let's Go Bro!
+              Start A Project
             </button>
           </div>
         </motion.div>

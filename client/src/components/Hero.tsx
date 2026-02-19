@@ -42,9 +42,9 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-xl md:text-2xl mb-40 opacity-90 max-w-2xl mx-auto"
         >
-          This Didn’t Start In A Studio. It Started Behind A Bar.
+          This Didn't Start In A Studio. It Started Behind A Bar.
           <br />
-          Content With A Pulse. Design With A Strategy.
+          Content With Purpose. Design With Strategy.
         </motion.p>
 
         <motion.div

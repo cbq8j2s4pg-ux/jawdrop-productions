@@ -44,7 +44,7 @@ export default function About() {
                 >
                   150+
                 </motion.div>
-                <div className="text-jaw-dark-silver">Bangers Delivered</div>
+                <div className="text-jaw-dark-silver">Projects Delivered</div>
               </div>
               <div className="text-center">
                 <motion.div
@@ -55,7 +55,7 @@ export default function About() {
                 >
                   100%
                 </motion.div>
-                <div className="text-jaw-dark-silver">Pure Heat</div>
+                <div className="text-jaw-dark-silver">Client Focused</div>
               </div>
             </div>
           </motion.div>

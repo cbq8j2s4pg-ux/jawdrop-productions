@@ -40,9 +40,7 @@ export default function Footer() {
               JAW Drop Productions
             </h3>
             <p className="text-jaw-silver mb-6 max-w-md">
-              Creating jaw-dropping video content that transforms small
-              businesses into industry leaders through compelling visual
-              storytelling.
+              Original content. Real strategy. Built for small businesses that want to stand out.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
@@ -95,7 +93,7 @@ export default function Footer() {
                   onClick={() => scrollToSection("contact")}
                   className="hover:text-white transition-colors duration-200"
                 >
-                  Get Free Quote
+                  Start A Project
                 </button>
               </li>
             </ul>
@@ -109,8 +107,7 @@ export default function Footer() {
           className="border-t border-jaw-dark-silver mt-8 pt-8 text-center text-jaw-silver"
         >
           <p>
-            &copy; 2025 JAW Drop Productions. All rights reserved. |
-            Transforming small businesses through video marketing.
+            &copy; 2026 JAW Drop Productions. All rights reserved.
           </p>
         </motion.div>
       </div>
