@@ -12,9 +12,10 @@ import {
   Rocket,
 } from "lucide-react";
 
-function TypewriterBubble({ text, isActive, delay = 0 }: { text: string; isActive: boolean; delay?: number }) {
+function TypewriterBubble({ text, author, title, isActive, delay = 0 }: { text: string; author: string; title: string; isActive: boolean; delay?: number }) {
   const [displayedText, setDisplayedText] = useState("");
   const [started, setStarted] = useState(false);
+  const [typingDone, setTypingDone] = useState(false);
 
   useEffect(() => {
     if (!isActive) return;
@@ -28,13 +29,16 @@ function TypewriterBubble({ text, isActive, delay = 0 }: { text: string; isActiv
     const interval = setInterval(() => {
       i++;
       setDisplayedText(text.slice(0, i));
-      if (i >= text.length) clearInterval(interval);
+      if (i >= text.length) {
+        clearInterval(interval);
+        setTimeout(() => setTypingDone(true), 400);
+      }
     }, 35);
     return () => clearInterval(interval);
   }, [started, text]);
 
   return (
-    <div className="flex justify-start">
+    <div className="flex flex-col items-start">
       <div
         className="relative bg-jaw-gray text-white px-6 py-4 rounded-2xl rounded-bl-sm max-w-2xl shadow-lg"
         style={{ minHeight: '80px' }}
@@ -51,6 +55,16 @@ function TypewriterBubble({ text, isActive, delay = 0 }: { text: string; isActiv
           style={{ clipPath: 'polygon(100% 0, 100% 100%, 0 100%)' }}
         />
       </div>
+      {/* Author signature - fades in after typing completes */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={typingDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+        transition={{ duration: 0.5 }}
+        className="mt-3 ml-4"
+      >
+        <div className="font-bold text-jaw-gray" style={{ fontFamily: "'Source Sans 3', sans-serif" }}>{author}</div>
+        <div className="text-sm text-jaw-dark-silver" style={{ fontFamily: "'Source Sans 3', sans-serif" }}>{title}</div>
+      </motion.div>
     </div>
   );
 }
@@ -73,6 +87,8 @@ function TestimonialsSection() {
       <div className="max-w-3xl mx-auto space-y-4">
         <TypewriterBubble
           text="Jonathan Wiess was our amazing guy behind the camera this weekend. I was blown away by his quick turnaround time with productions. He has mass potential to help us get next level status! We are happy to have him."
+          author="Lorena L."
+          title="Lake Country Cards, Owner"
           isActive={testimonialInView}
           delay={500}
         />
