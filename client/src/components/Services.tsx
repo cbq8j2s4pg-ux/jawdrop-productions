@@ -12,6 +12,13 @@ import {
   Rocket,
 } from "lucide-react";
 
+import printImg from "@assets/print.jpg";
+import droneImg from "@assets/drone.jpg";
+import brandImg from "@assets/brand.jpg";
+import auditImg from "@assets/audit.jpg";
+import managementImg from "@assets/management.jpg";
+import videoImg from "@assets/video.jpg";
+
 export default function Services() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -29,7 +36,7 @@ export default function Services() {
       description:
         "Need a menu that doesn't look like it was made in Word? We got you covered with designs that actually convert.",
       features: ["Fire menus", "Killer posters", "Promo flyers that pop", "Event materials that wow"],
-      bgImage: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=800&q=80",
+      bgImage: printImg,
     },
     {
       icon: Zap,
@@ -41,7 +48,7 @@ export default function Services() {
         "Eye-catching visual variety that pops",
         "Social-ready edits that go viral",
       ],
-      bgImage: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=800&q=80",
+      bgImage: droneImg,
     },
     {
       icon: Sparkles,
@@ -53,7 +60,7 @@ export default function Services() {
         "Social post templates that slap",
         "Visual guidelines that actually work",
       ],
-      bgImage: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80",
+      bgImage: brandImg,
     },
     {
       icon: Camera,
@@ -66,7 +73,7 @@ export default function Services() {
         "Actionable recommendations that work",
         "Delivered as a visual breakdown",
       ],
-      bgImage: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80",
+      bgImage: auditImg,
     },
     {
       icon: Calendar,
@@ -79,7 +86,7 @@ export default function Services() {
         "Captions + scheduling that converts",
         "Strategy + reporting that shows results",
       ],
-      bgImage: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&w=800&q=80",
+      bgImage: managementImg,
     },
     {
       icon: Video,
@@ -92,7 +99,7 @@ export default function Services() {
         "Platform-optimized for maximum reach",
         "Custom branded style (not basic trends)",
       ],
-      bgImage: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80",
+      bgImage: videoImg,
     },
   ];
 
