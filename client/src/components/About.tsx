@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Zap } from "lucide-react";
-import aboutImage from "@assets/2.jpg";
+import aboutImage from "@assets/29.jpg";
 
 function useCountUp(target: number, isActive: boolean, duration: number = 2000) {
   const [count, setCount] = useState(0);
