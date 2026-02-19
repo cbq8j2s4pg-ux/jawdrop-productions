@@ -49,7 +49,7 @@ function TestimonialsSection() {
 
   const messages = [
     {
-      text: "Jonathan Wiess was our amazing guy behind the camera this weekend. I was blown away by his quick turnaround time with productions. He has mass potential to help us get next level status! We are happy to have him.",
+      text: "Jonathan Weiss was our amazing guy behind the camera this weekend. I was blown away by his quick turnaround time with productions. He has mass potential to help us get next level status! We are happy to have him.",
       sender: "Lorena L.",
       subtitle: "Lake Country Cards, Owner",
       color: "#34C759",
