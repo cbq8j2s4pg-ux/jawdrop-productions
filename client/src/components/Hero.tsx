@@ -1,8 +1,16 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import backgroundImage from "@assets/IMG_4718_1749663103681.jpeg";
 
 export default function Hero() {
+  const [shimmerDone, setShimmerDone] = useState(false);
+
+  useEffect(() => {
+    // After slide (1.8s delay + 0.8s duration) + shimmer sweep (2s) = ~4.6s
+    const timer = setTimeout(() => setShimmerDone(true), 5000);
+    return () => clearTimeout(timer);
+  }, []);
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -39,7 +47,7 @@ export default function Hero() {
             I'M NOT A CONTENT VENDOR
           </motion.h1>
 
-          {/* "I'M A BRAND COLLABORATOR" - slides down from under */}
+          {/* "I'M A BRAND COLLABORATOR" - slides down then shimmers to gold */}
           <motion.h1
             initial={{ opacity: 0, y: -30, clipPath: "inset(0 0 100% 0)" }}
             animate={{ opacity: 1, y: 0, clipPath: "inset(0 0 0% 0)" }}
@@ -48,7 +56,7 @@ export default function Hero() {
               delay: 1.8,
               ease: "easeOut",
             }}
-            className="text-4xl md:text-6xl font-bold leading-tight"
+            className={`text-4xl md:text-6xl font-bold leading-tight ${shimmerDone ? 'shimmer-gold-active' : 'shimmer-gold'}`}
           >
             I'M A BRAND COLLABORATOR
           </motion.h1>
