@@ -25,16 +25,34 @@ export default function Hero() {
       ></div>
 
       <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4 pt-20">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
-        >
-          I’m Not A Content Vendor
-          <br />
-          I’m A Brand Collaborator
-        </motion.h1>
+        <div className="mb-6">
+          {/* "I'M NOT A CONTENT VENDOR" - exaggerated exhale animation */}
+          <motion.h1
+            initial={{ opacity: 0, scale: 2.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              opacity: { duration: 0.3, delay: 0.2 },
+              scale: { duration: 1.4, delay: 0.2, ease: [0.16, 1, 0.3, 1] },
+            }}
+            className="text-4xl md:text-6xl font-bold leading-tight"
+          >
+            I'M NOT A CONTENT VENDOR
+          </motion.h1>
+
+          {/* "I'M A BRAND COLLABORATOR" - slides down from under */}
+          <motion.h1
+            initial={{ opacity: 0, y: -30, clipPath: "inset(0 0 100% 0)" }}
+            animate={{ opacity: 1, y: 0, clipPath: "inset(0 0 0% 0)" }}
+            transition={{
+              duration: 0.8,
+              delay: 1.8,
+              ease: "easeOut",
+            }}
+            className="text-4xl md:text-6xl font-bold leading-tight"
+          >
+            I'M A BRAND COLLABORATOR
+          </motion.h1>
+        </div>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
