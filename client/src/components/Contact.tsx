@@ -1,13 +1,10 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { insertContactSchema } from "@shared/schema";
 import { z } from "zod";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -21,9 +18,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const contactFormSchema = insertContactSchema.extend({
+const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
+  phone: z.string().optional(),
+  businessType: z.string().optional(),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
@@ -33,6 +32,7 @@ export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -45,28 +45,39 @@ export default function Contact() {
     },
   });
 
-  const contactMutation = useMutation({
-    mutationFn: async (data: ContactFormData) => {
-      return await apiRequest("POST", "/api/contacts", data);
-    },
-    onSuccess: () => {
-      toast({
-        title: "Message sent successfully!",
-        description: "We'll get back to you within 24 hours.",
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/weissj1010@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          phone: data.phone || "Not provided",
+          "Business Type": data.businessType || "Not specified",
+          message: data.message,
+          _subject: `New JAW Drop Productions inquiry from ${data.name}`,
+        }),
       });
-      form.reset();
-    },
-    onError: (error) => {
+      if (response.ok) {
+        toast({
+          title: "Message sent successfully!",
+          description: "We'll get back to you within 24 hours.",
+        });
+        form.reset();
+      } else {
+        throw new Error("Failed to send");
+      }
+    } catch (error) {
       toast({
         title: "Error sending message",
         description: "Please try again or contact us directly.",
         variant: "destructive",
       });
-    },
-  });
-
-  const onSubmit = (data: ContactFormData) => {
-    contactMutation.mutate(data);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -220,10 +231,10 @@ export default function Contact() {
 
               <Button
                 type="submit"
-                disabled={contactMutation.isPending}
+                disabled={isSubmitting}
                 className="w-full bg-jaw-gray hover:bg-jaw-silver hover:text-jaw-gray text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105"
               >
-                {contactMutation.isPending
+                {isSubmitting
                   ? "Sending..."
                   : "Send Message & Get Free Quote"}
               </Button>
