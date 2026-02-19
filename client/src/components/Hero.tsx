@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import backgroundImage from "@assets/2.jpg";
+import backgroundImage from "@assets/IMG_4718_1749663103681.jpeg";
 
 export default function Hero() {
   const scrollToSection = (sectionId: string) => {
