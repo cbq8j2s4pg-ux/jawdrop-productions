@@ -5,6 +5,7 @@ import { X, Play } from "lucide-react";
 import newWorkImg from "@assets/New Work.jpg";
 import drinkImg from "@assets/Drink.jpg";
 import littleCeasarVideo from "@assets/Little Ceasar Pleaser.mp4";
+import motionGraphicVideo from "@assets/Motion Graphic.mp4";
 
 type PortfolioItem = {
   id: number;
@@ -36,6 +37,13 @@ const portfolioItems: PortfolioItem[] = [
     description: "Eye-catching product photography that makes you want to reach for a glass.",
     category: "Photography",
     image: drinkImg,
+  },
+  {
+    id: 4,
+    title: "Motion Graphic",
+    description: "Dynamic motion graphics that bring ideas to life with movement and energy.",
+    category: "Video",
+    video: motionGraphicVideo,
   },
 ];
 
