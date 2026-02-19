@@ -6,6 +6,7 @@ import newWorkImg from "@assets/New Work.jpg";
 import drinkImg from "@assets/Drink.jpg";
 import littleCeasarVideo from "@assets/Little Ceasar Pleaser.mp4";
 import motionGraphicVideo from "@assets/Motion Graphic.mp4";
+import tueCueVideo from "@assets/Tue Cue.mp4";
 
 type PortfolioItem = {
   id: number;
@@ -44,6 +45,13 @@ const portfolioItems: PortfolioItem[] = [
     description: "Dynamic motion graphics that bring ideas to life with movement and energy.",
     category: "Video",
     video: motionGraphicVideo,
+  },
+  {
+    id: 5,
+    title: "Tue Cue",
+    description: "Punchy short-form content crafted to connect and convert.",
+    category: "Video",
+    video: tueCueVideo,
   },
 ];
 
