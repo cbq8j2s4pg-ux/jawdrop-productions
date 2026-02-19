@@ -160,30 +160,51 @@ export default function Services() {
           ))}
         </div>
 
-        {/* Full-width "Let's Go Bro" section */}
+        {/* Client Testimonials */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16 bg-gradient-to-r from-jaw-gray to-jaw-dark-silver rounded-2xl p-12 text-center text-jaw-gray"
+          className="mt-16"
         >
-          <div className="max-w-4xl mx-auto">
-            <div className="mb-8">
-              <Rocket className="mx-auto mb-4" size={48} />
-            </div>
-            <h3 className="text-3xl md:text-4xl font-bold mb-6">
-              Don't See Exactly What You Need?
-            </h3>
-            <p className="text-xl mb-8 text-jaw-dark-silver">
-              Custom projects and creative collaborations are always welcome.
-              Tell me your idea and I'll tell you how we make it happen.
-            </p>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="bg-jaw-silver hover:bg-jaw-gold text-jaw-gray font-bold text-xl px-12 py-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              Start A Project
-            </button>
+          <h3 className="text-3xl md:text-4xl font-bold text-jaw-gray mb-10 text-center">
+            Client Testimonials
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                quote: "JAW Drop completely transformed our social media presence. We went from barely getting any engagement to having people actually reach out because of what they saw online.",
+                name: "Mike R.",
+                business: "Restaurant Owner",
+              },
+              {
+                quote: "I'd been managing my own page for years with nothing to show for it. Jonathan took over and within a month I could see the difference. The content actually looks professional now.",
+                name: "Sarah T.",
+                business: "Boutique Owner",
+              },
+              {
+                quote: "The drone footage alone was worth it. But the whole package — the branding refresh, the video content, the strategy — it made my business look like a major operation.",
+                name: "David L.",
+                business: "Event Venue Manager",
+              },
+            ].map((testimonial, index) => (
+              <motion.div
+                key={testimonial.name}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.5, delay: 0.9 + index * 0.15 }}
+                className="bg-white rounded-2xl p-8 shadow-md border border-jaw-silver relative"
+              >
+                <div className="text-5xl font-bold mb-4" style={{ color: '#C5A44E', fontFamily: 'Georgia, serif' }}>"</div>
+                <p className="text-jaw-dark-silver mb-6 leading-relaxed italic">
+                  {testimonial.quote}
+                </p>
+                <div className="border-t border-jaw-silver pt-4">
+                  <div className="font-bold text-jaw-gray">{testimonial.name}</div>
+                  <div className="text-sm text-jaw-dark-silver">{testimonial.business}</div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>
