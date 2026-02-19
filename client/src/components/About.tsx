@@ -19,8 +19,8 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-jaw-gray mb-6">
-              <span style={{ fontFamily: "'Teko', sans-serif" }}>We Make Your Business</span>{" "}
-              <span className="text-jaw-dark-silver" style={{ fontFamily: "'League Gothic', sans-serif", fontSize: '1.15em' }}>ABSOLUTELY LEGENDARY</span>
+              We Make Your Business{" "}
+              <span className="text-jaw-dark-silver">ABSOLUTELY LEGENDARY</span>
             </h2>
             <p className="text-lg text-jaw-dark-silver mb-6 leading-relaxed">
               For almost 20 years, I lived the service industry. Bartending, serving, managing, all of it. Then a few years ago, someone handed me the keys to a small business's social media, and something clicked.
