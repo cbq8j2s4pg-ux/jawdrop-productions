@@ -91,6 +91,8 @@ export default function Navigation() {
                       letterSpacing: '0.05em',
                       color: isScrolled ? '#C5A44E' : '#ffffff',
                       textShadow: isScrolled ? '0 0 8px rgba(197, 164, 78, 0.3)' : 'none',
+                      WebkitTextStroke: isScrolled ? '0.5px #000' : 'none',
+                      paintOrder: 'stroke fill',
                     }}
                   >
                     {link.label}
