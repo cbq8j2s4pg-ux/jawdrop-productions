@@ -25,6 +25,7 @@ const contactFormSchema = z.object({
   phone: z.string().optional(),
   businessType: z.string().optional(),
   message: z.string().min(10, "Message must be at least 10 characters"),
+  _honey: z.string().max(0, "Bot detected").optional(),
 });
 
 type ContactFormData = z.infer<typeof contactFormSchema>;
@@ -47,30 +48,66 @@ export default function Contact() {
   });
 
   const onSubmit = async (data: ContactFormData) => {
+    // Honeypot check — if a bot filled in the hidden field, silently reject
+    if (data._honey) {
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you within 24 hours.",
+      });
+      form.reset();
+      return;
+    }
+
     setIsSubmitting(true);
+
+    const formPayload = {
+      name: data.name,
+      email: data.email,
+      phone: data.phone || "Not provided",
+      businessType: data.businessType || "Not specified",
+      message: data.message,
+    };
+
+    // Save to backend as a backup record
+    try {
+      await fetch("/api/contacts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formPayload),
+      });
+    } catch {
+      // Backend save is best-effort — don't block the main submission
+    }
+
+    // Send via FormSubmit.co for email notification
     try {
       const response = await fetch("https://formsubmit.co/ajax/weissj1010@gmail.com", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          name: data.name,
-          email: data.email,
-          phone: data.phone || "Not provided",
-          "Business Type": data.businessType || "Not specified",
-          message: data.message,
+          ...formPayload,
+          "Business Type": formPayload.businessType,
           _subject: `New JAW Drop Productions inquiry from ${data.name}`,
+          _captcha: "false",
+          _template: "table",
+          _honey: "",
         }),
       });
-      if (response.ok) {
+
+      const result = await response.json().catch(() => null);
+
+      if (response.ok && result?.success !== "false") {
         toast({
           title: "Message sent successfully!",
           description: "We'll get back to you within 24 hours.",
         });
         form.reset();
       } else {
-        throw new Error("Failed to send");
+        console.error("FormSubmit.co error:", result);
+        throw new Error(result?.message || "Failed to send");
       }
     } catch (error) {
+      console.error("Form submission error:", error);
       toast({
         title: "Error sending message",
         description: "Please try again or contact us directly.",
@@ -150,6 +187,18 @@ export default function Contact() {
               Want To Talk About Your Project?
             </h3>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              {/* Honeypot field — invisible to real users, catches bots */}
+              <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", top: "-9999px", opacity: 0, height: 0, overflow: "hidden", tabIndex: -1 }}>
+                <label htmlFor="_honey">Leave this empty</label>
+                <input
+                  id="_honey"
+                  type="text"
+                  autoComplete="off"
+                  tabIndex={-1}
+                  {...form.register("_honey")}
+                />
+              </div>
+
               <div>
                 <Label htmlFor="name">Name *</Label>
                 <Input
